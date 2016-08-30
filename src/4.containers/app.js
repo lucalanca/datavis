@@ -1,14 +1,22 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
 class App extends Component {
   render() {
     const { children, currentRoute } = this.props
     return (
-      <div>
-        <h1>Datavis — {currentRoute}</h1>
+      <main>
+        <header>
+          <h1>datavis - {currentRoute}</h1>
+          <nav>
+            <ul className="o-list--inline">
+              <li className="o-list__item"><Link to="/">🏠</Link></li>
+            </ul>
+          </nav>
+        </header>
         {children}
-      </div>
+      </main>
     )
   }
 }

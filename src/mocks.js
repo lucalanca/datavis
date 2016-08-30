@@ -36,24 +36,24 @@ export const SPREADSHEETS = [
     ],
     fields: [
       {
-        name: 'company',
+        key: 'company',
         type: 'text'
       },
       {
-        name: 'position',
+        key: 'position',
         type: 'text'
       },
       {
-        name: 'salary',
+        key: 'salary',
         type: 'number'
       },
       {
-        name: 'size',
+        key: 'size',
         type: 'number'
       },
       {
-        name: 'size',
-        type: 'location'
+        key: 'location',
+        type: 'geo'
       }
     ]
   }

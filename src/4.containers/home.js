@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     const {spreadsheets} = this.props;
     return (
-      <div>
+      <ul>
         {
           spreadsheets.map(s =>
             <li key={`s-${s.name}`}>
@@ -14,7 +14,7 @@ class Home extends Component {
             </li>
           )
         }
-      </div>
+      </ul>
     )
   }
 }
