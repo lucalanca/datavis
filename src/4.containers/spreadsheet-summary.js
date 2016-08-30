@@ -2,18 +2,30 @@ import React, { Component, PropTypes } from 'react'
 import groupBy from 'lodash.groupby'
 import map from 'lodash.map'
 
-import {LineChart, Line} from 'recharts';
+import { LineChart, Line, XAxis, YAxis } from 'recharts';
 
 const isNumberField = (field) => field.type === 'number'
+
+const numberFieldSort = (field) => (a, b) => {
+  if (a[field.key] > b[field.key]) {
+    return 1;
+  }
+  if (a[field.key] < b[field.key]) {
+    return -1;
+  }
+  // a must be equal to b
+  return 0;
+}
 
 const distributeNumberField = (data, field) => {
   const dataGroupedByValue = groupBy(data, datum => datum[field.key])
   return map(dataGroupedByValue, (items, valueStr) => {
     return {
       value: Number(valueStr),
+      itemsNumber: items.length,
       items
     }
-  })
+  }).sort(numberFieldSort(field))
 }
 
 function renderValue(datum, field) {
@@ -71,7 +83,9 @@ class SpreedsheetSummary extends Component {
             <div key={`number-field-distribution--${field.key}`}>
               <p>{field.key}</p>
               <LineChart width={300} height={100} data={distribuition}>
-                <Line type='monotone' dataKey='value' stroke='#8884d8' strokeWidth={2} />
+                <Line dataKey='itemsNumber' />
+                <XAxis dataKey='value'/>
+                <YAxis/>
               </LineChart>
             </div>
           )
