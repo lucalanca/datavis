@@ -1,5 +1,7 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+@import "0.base/colors.scss";
+@import "0.base/spacings.scss";
+@import "0.base/typography.scss";
+
+@import "1.elements/box-sizing.scss";
+
+@import "2.objects/grid.scss";

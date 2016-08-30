@@ -9,3 +9,7 @@ build
 # misc
 .DS_Store
 npm-debug.log
+
+# ignore .css as we're using .scss
+# see https://github.com/facebookincubator/create-react-app/issues/78#issuecomment-236150585
+**/*.css

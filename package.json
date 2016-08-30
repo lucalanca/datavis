@@ -9,15 +9,24 @@
     "react-scripts": "0.2.3"
   },
   "dependencies": {
+    "lodash.groupby": "^4.6.0",
+    "lodash.map": "^4.6.0",
+    "lodash.pickby": "^4.6.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.7.0",
+    "react-router-redux": "^4.0.5",
+    "recharts": "^0.13.4",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0"
   },
   "scripts": {
     "start": "npm run compile-sass && npm run background-sass-watcher && npm run dev-server",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
-
     "dev-server": "react-scripts start && kill $WATCH_SASS_PID",
     "background-sass-watcher": "node-sass --watch --recursive src -o src & WATCH_SASS_PID=$!",
     "compile-sass": "node-sass --recursive src -o src"
