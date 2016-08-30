@@ -56,5 +56,66 @@ export const SPREADSHEETS = [
         type: 'geo'
       }
     ]
+  },
+  {
+    name: 'New Apartment',
+    slug: 'new-apartment',
+    data: [
+      {
+        rent: 1500,
+        rooms: 3.5,
+        location: {
+          lat: 12,
+          lng: 12
+        }
+      },
+      {
+        rent: 1400,
+        rooms: 3,
+        location: {
+          lat: 12,
+          lng: 12
+        }
+      },
+      {
+        rent: 1300,
+        rooms: 3.5,
+        location: {
+          lat: 12,
+          lng: 12
+        }
+      },
+      {
+        rent: 1350,
+        rooms: 2.5,
+        location: {
+          lat: 12,
+          lng: 12
+        }
+      },
+      {
+        rent: 1360,
+        rooms: 4,
+        location: {
+          lat: 12,
+          lng: 12
+        }
+      },
+
+    ],
+    fields: [
+      {
+        key: 'rent',
+        type: 'number'
+      },
+      {
+        key: 'rooms',
+        type: 'number'
+      },
+      {
+        key: 'location',
+        type: 'geo'
+      }
+    ]
   }
 ]
